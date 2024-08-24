@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Camareros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <!-- Filtro dataTable -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+
+    <!-- DataTables Responsive CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
+
+    <!-- DataTables Responsive JS -->
+    <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js" defer></script>
+
+</head>
+<body>
+<main class="container w-md-75 me-sm-3 ms-md-5 me-md-0">
+    <h1 class="text-center my-4">Listado de Comandas</h1>
+
+    <table class="display sm-row md-col" id="table">
+        <thead>
+
+        </thead>
+        <tbody>
+        <tr th:each="detalle : ${detalleComanda}">
+            <p><td><strong>Identificador detalle:</strong><td th:text="${detalleComanda.id}"></td><br>
+            <td><strong>Identificador Comanda:</strong><td th:text="${detalleComanda.idComanda.id}"></td><br>
+            <td><strong>Codigo Producto:</strong><td th:text="${detalleComanda.producto.id}"></td><br>
+                <td><strong>Cantidad:</strong><td th:text="${detalleComanda.cantidadProducto}"></td></p>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+</script>
+
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+</body>
+</html>
+
+
+<!--<tr th:each="detalle : ${detalleComanda}">
+    <td><strong>Identificador detalle:</strong><td th:text="${detalleComanda.id}"></td>
+    <td><strong>Identificador :</strong><td th:text="${detalleComanda.idComanda.id}"></td>
+    <td><strong>Identificador de comando:</strong>  <td th:text="${detalleComanda.producto.id}"></td>
+    <td><strong>Codigo de producto:</strong><td th:text="${detalleComanda.cantidadProducto}"></td>-->
